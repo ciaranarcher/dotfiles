@@ -76,10 +76,16 @@ if count(g:vimified_packages, 'general')
 
     Bundle 'Spaceghost/vim-matchit'
     Bundle 'kien/ctrlp.vim'
+    let g:ctrlp_by_filename = 1
+    let g:ctrlp_regexp = 1
     Bundle 'vim-scripts/scratch.vim'
 
     Bundle 'troydm/easybuffer.vim'
     nmap <leader>be :EasyBufferToggle<enter>
+
+    " My bundles
+    Bundle 'https://github.com/roman/golden-ratio.git'
+    Bundle 'https://github.com/mileszs/ack.vim.git'
 endif
 " }}}
 
@@ -262,6 +268,9 @@ map Y y$
 vnoremap <leader>yo "*y
 " Paste content from OS's clipboard
 nnoremap <leader>po "*p
+
+set clipboard=unnamed " Use system clipboard
+set nowrap " No text wrapping
 
 " clear highlight after search
 noremap <silent><Leader>/ :nohls<CR>

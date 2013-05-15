@@ -5,11 +5,10 @@ alias redot='cd ~/dotfiles && gpp && rake install; cd -'
 
 # OS X: open pwd in Finder.
 alias o="open ."
+# Open another instance of an application, e.g. ITerm
+alias openanother="open -n -a"
 
 alias hosts='sudo vim /etc/hosts'
-
-# http://www.hogbaysoftware.com/products/plaintext
-alias text='cd ~/Dropbox/PlainText && vim'
 
 # Shell
 alias la='ls -alh'
@@ -28,8 +27,6 @@ elif ls -G -d . >/dev/null 2>&1; then
   alias ls='ls -G'  # BSD/OS X
 fi
 
-# I always forget the common options.
-alias rsync?="echo 'rsync -az --progress server:/path/ path (Slashes are significant.)'"
 
 # Ruby on Rails
 alias sc="[ -f script/console ] && script/console || bundle exec rails console"

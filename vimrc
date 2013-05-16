@@ -328,7 +328,7 @@ set nolazyredraw
 set guioptions-=T
 
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
-set showbreak=↪
+" set showbreak=↪
 
 set notimeout
 set ttimeout

@@ -85,7 +85,6 @@ if count(g:vimified_packages, 'general')
 
     " My bundles
     Bundle 'https://github.com/roman/golden-ratio.git'
-    Bundle 'https://github.com/mileszs/ack.vim.git'
 endif
 " }}}
 
@@ -151,12 +150,13 @@ endif
 
 " _. Ruby {{{
 if count(g:vimified_packages, 'ruby')
-    Bundle 'vim-ruby/vim-ruby'
+    Bundle 'https://github.com/vim-ruby/vim-ruby'
     Bundle 'tpope/vim-rails'
     Bundle 'nelstrom/vim-textobj-rubyblock'
     Bundle 'ecomba/vim-ruby-refactoring'
+    Bundle 'https://github.com/tpope/vim-bundler.git'
 
-    autocmd FileType ruby,eruby,yaml set tw=80 ai sw=2 sts=2 et
+    autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
     autocmd FileType ruby,eruby,yaml setlocal foldmethod=manual
     autocmd User Rails set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 endif
@@ -228,14 +228,16 @@ if count(g:vimified_packages, 'color')
     Bundle 'tomasr/molokai'
     Bundle 'zaiste/Atom'
     Bundle 'w0ng/vim-hybrid'
+    Bundle 'https://github.com/twerth/ir_black'
 endif
 " }}}
 
 " }}}
 
 " General {{{
+set nofoldenable  " Disable folding
 filetype plugin indent on
-colorscheme hybrid
+colorscheme solarized
 syntax on
 
 " Set 5 lines to the cursor - when moving vertically
@@ -268,9 +270,6 @@ map Y y$
 vnoremap <leader>yo "*y
 " Paste content from OS's clipboard
 nnoremap <leader>po "*p
-
-set clipboard=unnamed " Use system clipboard
-set nowrap " No text wrapping
 
 " clear highlight after search
 noremap <silent><Leader>/ :nohls<CR>
@@ -348,7 +347,7 @@ set noswapfile
 set modelines=0
 set noeol
 set relativenumber
-set numberwidth=10
+set numberwidth=5
 set ruler
 if executable('/bin/zsh')
   set shell=/bin/zsh
@@ -366,10 +365,10 @@ set completeopt=longest,menuone,preview
 set autoindent
 set tabstop=2
 set softtabstop=2
-set textwidth=80
+"set textwidth=80
 set shiftwidth=2
 set expandtab
-set wrap
+set nowrap
 set formatoptions=qrn1
 set colorcolumn=+1
 " }}}

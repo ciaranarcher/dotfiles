@@ -33,7 +33,11 @@ alias bi="bundle install --local"
 alias b2a3="bundle --local && BUNDLE_GEMFILE=Gemfile.rails3 bundle --local" # Bundle for Rails 2 and Rails 3
 
 # Tests
-alias rt="rake test TEST="
+run_rake_tests() {
+  rake test TESTOPTS="-v" TEST=$1
+
+}
+alias rt=run_rake_tests
 
 # Servers
 alias zcstart="g classic && bundle exec foreman start -f .voice.procfile"

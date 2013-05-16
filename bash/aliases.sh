@@ -19,13 +19,24 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+# Git - find out where a particular commit is
+function fsha() {
+  if [[ "$@" != "" ]]; then
+    for hash in $@;do
+        echo $hash;
+        git branch -a --contains $hash | grep 'master\|staging\|production';\
+    done;
+  else
+    echo "You must give a hash argument.";
+  fi
+}
+
 # Portable ls with colors
 if ls --color -d . >/dev/null 2>&1; then
   alias ls='ls --color=auto'  # Linux
 elif ls -G -d . >/dev/null 2>&1; then
   alias ls='ls -G'  # BSD/OS X
 fi
-
 
 # Ruby on Rails
 alias mig="rake db:migrate"

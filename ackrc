@@ -1,0 +1,10 @@
+--type-set=js=.js
+--type-set=coffee=.coffee
+--type-set=haml=.haml
+--type-set=css=.css
+--type-set=sass=.sass
+--type-set=scss=.scss
+--type-set=scss=.handlebars
+--type-set=scss=.hbs
+--type-set=md=.md
+--type-set=rack=.ru

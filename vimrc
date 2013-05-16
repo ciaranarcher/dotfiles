@@ -28,7 +28,7 @@ endif
 " Use this variable inside your local configuration to declare
 " which package you would like to include
 if ! exists('g:vimified_packages')
-    let g:vimified_packages = ['general', 'fancy', 'os', 'coding', 'python', 'ruby', 'html', 'css', 'js', 'clojure', 'haskell', 'color']
+    let g:vimified_packages = ['general', 'fancy', 'os', 'coding', 'ruby', 'html', 'css', 'js', 'color']
 endif
 " }}}
 

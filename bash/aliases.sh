@@ -32,6 +32,11 @@ function fsha() {
   fi
 }
 
+# Copy last git commit to clipboard
+function csha() {
+ git rev-parse HEAD | tr -d '\n' | pbcopy
+}
+
 # Portable ls with colors
 if ls --color -d . >/dev/null 2>&1; then
   alias ls='ls --color=auto'  # Linux

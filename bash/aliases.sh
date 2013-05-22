@@ -34,7 +34,9 @@ function fsha() {
 
 # Copy last git commit to clipboard
 function csha() {
- git rev-parse HEAD | tr -d '\n' | pbcopy
+  sha=`git rev-parse HEAD | tr -d '\n'`
+  echo "Copied '$sha' to clipboard."
+  printf $sha | pbcopy
 }
 
 # Copy current Git branch name

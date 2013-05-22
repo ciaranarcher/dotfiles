@@ -35,13 +35,15 @@ function fsha() {
 # Copy last git commit to clipboard
 function csha() {
   sha=`git rev-parse HEAD | tr -d '\n'`
-  echo "Copied '$sha' to clipboard."
   printf $sha | pbcopy
+  echo "Copied '$sha' to clipboard."
 }
 
 # Copy current Git branch name
 function cbr() {
-  git rev-parse --abbrev-ref HEAD | tr -d '\n' | pbcopy
+  br=`git rev-parse --abbrev-ref HEAD | tr -d '\n'`
+  printf $br | pbcopy
+  echo "Copied '$br' to clipboard."
  }
 
 # Portable ls with colors

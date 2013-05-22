@@ -1,0 +1,48 @@
+[user]
+	name = Ciaran Archer
+	email = carcher@zendesk.com
+[push]
+	default = upstream
+[alias]
+  st = status
+  d = diff --color
+  ci = commit -v
+  aa = add --all
+  br = branch
+  co = checkout
+  df = diff --color
+  dc = diff --cached
+  lg = log -p
+  l = log --pretty=format:\"%h %an %ar - %s\"
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ls = ls-files
+  pb = push -u origin
+  cor = checkout -t
+  # Show files ignored by git:
+  ign = ls-files -o -i --exclude-standa
+[push]
+	default = upstream
+[color]
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[core]
+	excludesfile = /Users/ciaran/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

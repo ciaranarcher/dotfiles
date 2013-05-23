@@ -46,7 +46,7 @@ function cbr() {
   echo "Copied '$br' to clipboard."
  }
 
-# Convienence function for use when you encounter Gemfile conflicts when
+# Convenience function for use when you encounter Gemfile conflicts when
 # rebasing your branch against master in Classic.
 #
 # Presumes:

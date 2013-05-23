@@ -46,13 +46,15 @@ function cbr() {
   echo "Copied '$br' to clipboard."
  }
 
-# Git core extraction convienence function for use when you encounter Gemfile
-# conflicts when rebasing your branch against master in Classic.
+# Convienence function for use when you encounter Gemfile conflicts when
+# rebasing your branch against master in Classic.
+#
 # Presumes:
 # - You have started a rebase and need to resolve conflicts in Gemfile,
 #   Gemfile.lock and Gemfile.rails3.lock.
 # - You have edited the Gemfile to your satisfaction (usually just changing the
 #   zendesk_voice_core sha).
+#
 # The function will:
 # - Add Gemfile.
 # - Checks out Gemfile.lock to current HEAD.

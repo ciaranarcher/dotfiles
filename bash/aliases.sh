@@ -46,6 +46,43 @@ function cbr() {
   echo "Copied '$br' to clipboard."
  }
 
+# Git core extraction convienence function for use when you encounter Gemfile
+# conflicts when rebasing your branch against master in Classic.
+# Presumes:
+# - You have started a rebase and need to resolve conflicts in Gemfile,
+#   Gemfile.lock and Gemfile.rails3.lock.
+# - You have edited the Gemfile to your satisfaction (usually just changing the
+#   zendesk_voice_core sha).
+# The function will:
+# - Add Gemfile.
+# - Checks out Gemfile.lock to current HEAD.
+# - Checks out Gemfile.rails3.lock to current HEAD.
+# - Runs b2a3 (i.e. bundle --local && BUNDLE_GEMFILE=Gemfile.rails3 bundle --local).
+# - Add everything again.
+# - Runs git rebase --continue.
+function rebase_core() {
+  echo "rebase_core: You should have a saved Gemfile ready for bundling. Happy to proceed? [Y,n]"
+  read input
+  if [[ $input == "Y" || $input == "y" ]]; then
+    echo "rebase_core: Starting..."
+    echo "rebase_core: Adding Gemfile."
+    git add Gemfile
+    echo "rebase_core: Checking out Gemfile.lock and Gemfile.rails3.lock."
+    git checkout HEAD -- Gemfile.lock
+    git checkout HEAD -- Gemfile.rails3.lock
+    echo "rebase_core: Bundling for Rails 2 and 3."
+    b2a3
+    echo "rebase_core: Adding all modified files to git."
+    git add .
+    echo "rebase_core: Continuing rebase."
+    git rebase --continue
+    echo "rebase_core: Complete!"
+  else
+    echo "rebase_core: Outa here."
+  fi
+}
+
+
 # Portable ls with colors
 if ls --color -d . >/dev/null 2>&1; then
   alias ls='ls --color=auto'  # Linux

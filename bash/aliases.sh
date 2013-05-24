@@ -86,12 +86,14 @@ function rebase_core() {
 
 # Delete all branches that are not your own
 function rm_branches() {
+  local regex="ciaran\|master\|ciaranarcher"
+
   echo -e "rm_branches: The following branches will be deleted locally...\n"
-  git branch | grep -v "ciaran\|master\|ciaranarcher"
+  git branch | grep -v $regex
   echo -e "\nrm_branches: Happy to proceed? [Y,n]"
   read input
   if [[ $input == "Y" || $input == "y" ]]; then
-    git branch | grep -v "ciaran\|master\|ciaranarcher" | xargs git branch -D
+    git branch | grep -v $regex | xargs git branch -D
     echo -e "\nrm_branches: Done. Remaining branches:\n"
     git branch
   else

@@ -73,7 +73,7 @@ function rebase_core() {
     git checkout HEAD -- Gemfile.lock
     git checkout HEAD -- Gemfile.rails3.lock
     echo "rebase_core: Bundling for Rails 2 and 3."
-    b2a3
+    b2a3 || { echo 'b2a3 failed'; exit 1; }
     echo "rebase_core: Adding all modified files to git."
     git add .
     echo "rebase_core: Continuing rebase."

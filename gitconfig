@@ -21,6 +21,7 @@
   cor = checkout -t
   # Show files ignored by git:
   ign = ls-files -o -i --exclude-standa
+  undo-commit = reset --soft HEAD^
 [push]
 	default = upstream
 [color]

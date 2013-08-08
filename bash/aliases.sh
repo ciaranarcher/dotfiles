@@ -22,7 +22,6 @@ alias ....='cd ../../..'
 # Git - find out where a particular commit is
 function fsha() {
   if [[ "$@" != "" ]]; then
-    git fetch
     for hash in $@;do
         echo $hash;
         git branch -a --contains $hash | grep 'master\|staging\|production';\

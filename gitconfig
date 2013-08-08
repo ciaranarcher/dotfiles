@@ -1,9 +1,8 @@
 [user]
-	name = Ciaran Archer
-	email = carcher@zendesk.com
-[push]
-	default = upstream
+  name = Ciaran Archer
+  email = carcher@zendesk.com
 [alias]
+  ff = merge --ff-only
   st = status
   d = diff --color
   ci = commit -v
@@ -22,8 +21,10 @@
   # Show files ignored by git:
   ign = ls-files -o -i --exclude-standa
   undo-commit = reset --soft HEAD^
+[branch]
+  autosetuprebase = always
 [push]
-	default = upstream
+  default = upstream
 [color]
   ui = auto
 [color "branch"]
@@ -40,10 +41,10 @@
   changed = green
   untracked = cyan
 [core]
-	excludesfile = /Users/ciaran/.gitignore_global
+  excludesfile = /Users/ciaran/.gitignore_global
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true

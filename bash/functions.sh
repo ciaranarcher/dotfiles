@@ -2,7 +2,6 @@
 #
 #     henrik@Nyx /tmp$ mkcd foo/bar/baz
 #     henrik@Nyx /tmp/foo/bar/baz$
-#
 function mkcd {
   mkdir -p "$1" && cd "$1"
 }
@@ -88,4 +87,28 @@ function rm_branches() {
   else
     echo "rm_branches: Outa here."
   fi
+}
+
+# Reads all merged local branches and offers to delete any
+function rm_my_branches() {
+  echo -e "rm_my_branches: The following merged branches have been found...\n"
+  local to_remove="$(git branch --merged | grep "ciaran")"
+  echo -e "\x1B[1;31m$to_remove\x1B[0m \n"
+
+  for branch in ${to_remove[@]}; do
+    echo -e "rm_my_branches: \x1B[1;31m$branch\x1B[0m"
+    read -p "Remove? [Y,n] " -n 1 input; echo
+
+    if [[ $input == "Y" || $input == "y" ]]; then
+
+      git branch -D $branch
+      echo -e "rm_my_branches: Removed $branch.\n"
+    else
+      echo -e "rm_my_branches: Skipped $branch.\n"
+    fi
+  done
+
+  echo -e "rm_my_branches: Remaining branches:"
+  git branch
+  echo -e "rm_my_branches: Outa here."
 }

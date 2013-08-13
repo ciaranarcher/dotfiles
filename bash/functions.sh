@@ -1,8 +1,16 @@
+# List all functions in this file
+function funs() {
+  local current_file=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)/`basename "${BASH_SOURCE[0]}"`
+  echo -e "funs: The following functions are available in $current_file...\n"
+  grep "^function " $current_file | cut -d ' ' -f 2
+  echo -e "\nOuta here."
+}
+
 # Create directory and cd to it.
 #
 #     henrik@Nyx /tmp$ mkcd foo/bar/baz
 #     henrik@Nyx /tmp/foo/bar/baz$
-function mkcd {
+function mkcd() {
   mkdir -p "$1" && cd "$1"
 }
 

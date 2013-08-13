@@ -1,30 +1,3 @@
-# Calls grep with STDIN closed if in a terminal to avoid the "eternal wait" problem.
-# http://gist.github.com/476116
-
-function grep { (tty -s && exec <&-; $(which grep) $@); }
-
-
-# cd gem
-#
-#     henrik@Nyx ~$ cdgem thor
-#     henrik@Nyx ~/.rvm/gems/ree-1.8.7-2010.02/gems/thor-0.14.6$
-
-#
-function cdgem {
-  cd `rvm gemdir`/gems; cd `ls|grep $1|sort|tail -1`
-}
-
-
-# Print working file.
-#
-#     henrik@Henrik ~/.dotfiles[master]$ pwf ackrc 
-#     /Users/henrik/.dotfiles/ackrc
-#
-function pwf {
-  echo "$PWD/$1"
-}
-
-
 # Create directory and cd to it.
 #
 #     henrik@Nyx /tmp$ mkcd foo/bar/baz
@@ -34,37 +7,85 @@ function mkcd {
   mkdir -p "$1" && cd "$1"
 }
 
+# Git - find out where a particular commit is
+function fsha() {
+  echo "Fetching..."
+  git fetch
 
-# SSH to the given machine and add your id_rsa.pub or id_dsa.pub to authorized_keys.
-#
-#     henrik@Nyx ~$ sshkey hyper
-#     Password:
-#     sshkey done.
-
-function sshkey {
-  ssh $1 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys" < ~/.ssh/id_?sa.pub
-  echo "sshkey done."
+  if [[ "$@" != "" ]]; then
+    for hash in $@;do
+        echo "Searching branches for '$hash'...";
+        git branch -a --contains $hash | grep 'master\|staging\|production';\
+    done;
+  else
+    echo "You must give a hash argument.";
+  fi
 }
 
-# "SCP home". Lets you scp to a remote server, then do e.g. "cd /sub/dir; scph file.txt" to the same
-# effect as switching to your local machine and running "scp remote:/sub/dir/file.txt ~/Downloads/".
-#
-# The remote must, of course, define this function, and must forward its port 2222 to your local 22,
-# e.g. with this at the top of your local ~/.ssh/config:
-#
-#   RemoteForward 2222 localhost:22
-
-function scph {
-  scp -P2222 $@ henrik@localhost:Downloads/
+# Copy last git commit to clipboard
+function csha() {
+  sha=`git rev-parse HEAD | tr -d '\n'`
+  printf $sha | pbcopy
+  echo "Copied '$sha' to clipboard."
 }
 
+# Copy current Git branch name
+function cbr() {
+  br=`git rev-parse --abbrev-ref HEAD | tr -d '\n'`
+  printf $br | pbcopy
+  echo "Copied '$br' to clipboard."
+ }
 
-# Open the .xcodeproj file from the working directory (typically in Xcode).
+# Convenience function for use when you encounter Gemfile conflicts when
+# rebasing your branch against master in Classic.
 #
-#     henrik@Nyx ~/Code/iPhone/MyApp$ xc
-#     # equivalent to:
-#     open ~/Code/iPhone/MyApp/MyApp.xcodeproj
+# Presumes:
+# - You have started a rebase and need to resolve conflicts in Gemfile,
+#   Gemfile.lock and Gemfile.rails3.lock.
+# - You have edited the Gemfile to your satisfaction (usually just changing the
+#   zendesk_voice_core sha).
 #
-function xc {
-  open `ls | grep .xcodeproj`
+# The function will:
+# - Add Gemfile.
+# - Checks out Gemfile.lock to current HEAD.
+# - Checks out Gemfile.rails3.lock to current HEAD.
+# - Runs b2a3 (i.e. bundle --local && BUNDLE_GEMFILE=Gemfile.rails3 bundle --local).
+# - Add everything again.
+# - Runs git rebase --continue.
+function rebase_core() {
+  echo "rebase_core: You should have a saved Gemfile ready for bundling. Happy to proceed? [Y,n]"
+  read input
+  if [[ $input == "Y" || $input == "y" ]]; then
+    echo "rebase_core: Starting..."
+    echo "rebase_core: Adding Gemfile."
+    git add Gemfile
+    echo "rebase_core: Checking out Gemfile.lock and Gemfile.rails3.lock."
+    git checkout HEAD -- Gemfile.lock
+    git checkout HEAD -- Gemfile.rails3.lock
+    echo "rebase_core: Bundling for Rails 2 and 3."
+    b2a3 || { echo 'rebase_core: b2a3 failed. Exiting.'; exit 1; }
+    echo "rebase_core: Adding all modified files to git."
+    git add .
+    echo "rebase_core: Continuing rebase."
+    git rebase --continue
+    echo "rebase_core: Complete!"
+  else
+    echo "rebase_core: Outa here."
+  fi
+}
+
+# Delete all branches that are not your own
+# Credit to https://github.com/mphoratiu for help!
+function rm_branches() {
+  echo -e "rm_branches: The following branches will be deleted locally..."
+  local remove="$(git branch | grep -v "ciaran\|master\|ciaranarcher"|sed 's/^..//g')"; echo -e "\x1B[1;31m$remove\x1B[0m"
+  read -p "rm_branches: Happy to proceed? [Y,n] " -n 1 input; echo
+  if [[ $input == "Y" || $input == "y" ]]; then
+    git checkout master
+    xargs -n 1 git branch -D <<< $remove &&
+    echo -e "rm_branches: Done. Remaining branches:" &&
+    git branch
+  else
+    echo "rm_branches: Outa here."
+  fi
 }

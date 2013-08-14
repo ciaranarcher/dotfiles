@@ -35,7 +35,8 @@ alias b2a3="bundle --local && BUNDLE_GEMFILE=Gemfile.rails3 bundle --local" # Bu
 run_rake_tests() {
   ruby $1
 }
-alias rt=run_rake_tests
+alias rt=run_rake_tests # Classic
+alias bert=bundle exec rake test # Core
 
 # Servers
 alias run_classic="g classic && bundle exec foreman start -f .voice.procfile"

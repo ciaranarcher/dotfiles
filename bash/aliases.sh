@@ -36,7 +36,7 @@ run_rake_tests() {
   ruby $1
 }
 alias rt=run_rake_tests # Classic
-alias bert=bundle exec rake test # Core
+alias bert="bundle exec rake test" # Core
 
 # Servers
 alias run_classic="g classic && bundle exec foreman start -f .voice.procfile"

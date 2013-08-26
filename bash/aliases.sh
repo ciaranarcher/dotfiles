@@ -29,6 +29,7 @@ fi
 # Ruby on Rails
 alias mig="rake db:migrate"
 alias bi="bundle install --local"
+alias be="bundle exec"
 alias b2a3="bundle --local && BUNDLE_GEMFILE=Gemfile.rails3 bundle --local" # Bundle for Rails 2 and Rails 3
 
 # Tests

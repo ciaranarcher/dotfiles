@@ -41,7 +41,7 @@ alias bert="bundle exec rake test" # Core
 
 # Servers
 alias run_classic="g classic && bundle exec foreman start -f .voice.procfile"
-alias run_lotus="g lotus && bundle exec rails server thin -p 3010"
+alias run_lotus="g lotus && foreman start -f .voice.procfile"
 
 # Global Protect VPN
 alias global-off='sudo mv /Applications/GlobalProtect.app /Applications/GlobalProtectOFF.app && pkill -9 -f GlobalProtect'

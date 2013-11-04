@@ -40,7 +40,7 @@ alias rt=run_rake_tests # Classic
 alias bert="bundle exec rake test" # Core
 
 # Servers
-alias run_classic="g classic && bundle exec foreman start -f .voice.procfile"
+alias run_classic="g classic && BUNDLE_GEMFILE=Gemfile.rails3 bundle exec foreman start -f .voice.procfile"
 alias run_lotus="g lotus && foreman start -f .voice.procfile"
 
 # Global Protect VPN

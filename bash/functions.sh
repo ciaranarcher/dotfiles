@@ -83,19 +83,19 @@ function rebase_core() {
 
 # Delete all branches that are not your own
 # Credit to https://github.com/mphoratiu for help!
-function rm_branches() {
+function rm_others_branches() {
   git checkout master
 
-  echo -e "rm_branches: The following branches will be deleted locally..."
+  echo -e "rm_others_branches: The following branches will be deleted locally..."
   local remove="$(git branch | grep -v "ciaran\|master\|ciaranarcher"|sed 's/^..//g')"; echo -e "\x1B[1;31m$remove\x1B[0m"
-  read -p "rm_branches: Happy to proceed? [Y,n] " -n 1 input; echo
+  read -p "rm_others_branches: Happy to proceed? [Y,n] " -n 1 input; echo
   if [[ $input == "Y" || $input == "y" ]]; then
     git checkout master
     xargs -n 1 git branch -D <<< $remove &&
-    echo -e "rm_branches: Done. Remaining branches:" &&
+    echo -e "rm_others_branches: Done. Remaining branches:" &&
     git branch
   else
-    echo "rm_branches: Outa here."
+    echo "rm_others_branches: Outa here."
   fi
 }
 
@@ -124,3 +124,10 @@ function rm_my_branches() {
   git branch
   echo -e "rm_my_branches: Outa here."
 }
+
+# Convienence function
+function rm_branches() {
+  rm_others_branches
+  rm_my_branches
+}
+

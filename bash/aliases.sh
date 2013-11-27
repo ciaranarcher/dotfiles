@@ -28,9 +28,8 @@ fi
 
 # Ruby on Rails
 alias mig="rake db:migrate"
-alias bi="bundle install --local"
+alias bi="bundle --local && BUNDLE_GEMFILE=Gemfile.rails2 bundle --local"
 alias be="bundle exec"
-alias b2a3="bundle --local && BUNDLE_GEMFILE=Gemfile.rails3 bundle --local" # Bundle for Rails 2 and Rails 3
 
 # Tests
 run_rake_tests() {
@@ -41,7 +40,7 @@ alias bert="bundle exec rake test" # Core
 
 # Servers
 alias run_classic="g classic && BUNDLE_GEMFILE=Gemfile.rails3 bundle exec foreman start -f .voice.procfile"
-alias run_lotus="g lotus && foreman start -f .voice.procfile"
+alias run_lotus="g lotus && bundle exec foreman start -f .voice.procfile"
 
 # Global Protect VPN
 alias global-off='sudo mv /Applications/GlobalProtect.app /Applications/GlobalProtectOFF.app && pkill -9 -f GlobalProtect'

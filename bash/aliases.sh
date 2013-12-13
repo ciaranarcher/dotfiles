@@ -28,7 +28,7 @@ fi
 
 # Ruby on Rails
 alias mig="rake db:migrate"
-alias bi="bundle --local && BUNDLE_GEMFILE=Gemfile.rails2 bundle --local"
+alias bi="bundle --local"
 alias be="bundle exec"
 
 # Tests

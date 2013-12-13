@@ -237,7 +237,7 @@ endif
 " General {{{
 set nofoldenable  " Disable folding
 filetype plugin indent on
-colorscheme solarized
+" colorscheme solarized
 syntax on
 
 " Set 5 lines to the cursor - when moving vertically

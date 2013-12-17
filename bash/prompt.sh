@@ -5,6 +5,9 @@
 
 # 17:39:15 henrik@Nyx project_dir ree-1.8.7@project master*$
 
+# Vim key bindings
+set -o vi
+
 function __rvm_prompt {
   if hash rvm-prompt 2>&- ; then
     echo " `rvm-prompt i v g s`"

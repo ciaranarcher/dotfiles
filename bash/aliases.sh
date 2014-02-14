@@ -37,9 +37,11 @@ run_rake_tests() {
 }
 alias rt=run_rake_tests # Classic
 alias bert="bundle exec rake test" # Core
+alias kt="ps -ef | grep -v grep | grep forward | awk '{print $2}' | xargs kill -9" # Kill tunnel
+alias kr="ps -ef | grep -v grep | grep resque | awk '{print $2}' | xargs kill -9" # Kill resque workers
 
 # Servers
-alias run_classic="g classic && bundle exec foreman start -f .voice.procfile"
+alias run_classic="kt && kr && g classic && bundle exec foreman start -f .voice.procfile"
 alias run_lotus="g lotus && foreman start -f .voice.procfile"
 
 # Global Protect VPN

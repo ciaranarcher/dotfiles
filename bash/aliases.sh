@@ -41,8 +41,9 @@ alias kt="ps -ef | grep -v grep | grep forward | awk '{print $2}' | xargs kill -
 alias kr="ps -ef | grep -v grep | grep resque | awk '{print $2}' | xargs kill -9" # Kill resque workers
 
 # Servers
-alias run_classic="kt && kr && g classic && bundle exec foreman start -f .voice.procfile"
+alias run_classic="g classic && bundle exec foreman start -f .voice.app.procfile"
 alias run_lotus="g lotus && foreman start -f .voice.procfile"
+alias run_voice="g voice && bundle exec foreman start"
 
 # Global Protect VPN
 alias global-off='sudo mv /Applications/GlobalProtect.app /Applications/GlobalProtectOFF.app && pkill -9 -f GlobalProtect'

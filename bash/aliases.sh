@@ -39,6 +39,7 @@ alias rt=run_rake_tests # Classic
 alias bert="bundle exec rake test" # Core
 alias kt="ps -ef | grep -v grep | grep forward | awk '{print $2}' | xargs kill -9" # Kill tunnel
 alias kr="ps -ef | grep -v grep | grep resque | awk '{print $2}' | xargs kill -9" # Kill resque workers
+alias vf="g classic && ./script/feature list | grep voice" # List all voice features
 
 # Servers
 alias run_classic="g classic && bundle exec foreman start -f .voice.app.procfile"

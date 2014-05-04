@@ -31,20 +31,13 @@ alias mig="rake db:migrate"
 alias bi="bundle --local"
 alias be="bundle exec"
 
-# Tests
-run_rake_tests() {
-  ruby $1
-}
-alias rt=run_rake_tests # Classic
-alias bert="bundle exec rake test" # Core
-alias kt="ps -ef | grep -v grep | grep forward | awk '{print $2}' | xargs kill -9" # Kill tunnel
-alias kr="ps -ef | grep -v grep | grep resque | awk '{print $2}' | xargs kill -9" # Kill resque workers
+alias bert="bundle exec rake test"
 alias vf="g classic && ./script/feature list | grep voice" # List all voice features
+alias tf="tail -f log/development.log"
 
-# Servers
-alias run_classic="g classic && bundle exec foreman start -f .voice.app.procfile"
-alias run_lotus="g lotus && foreman start -f .voice.procfile"
-alias run_voice="g voice && bundle exec foreman start"
+alias bounce="touch tmp/restart.txt && echo 'Server will bounce at next request.'"
+alias run_radar="g radar && npm rebuild && npm start"
+alias run_voice="g voice && bundle exec foreman start -f Procfile.boxen"
 
 # Global Protect VPN
 alias global-off='sudo mv /Applications/GlobalProtect.app /Applications/GlobalProtectOFF.app && pkill -9 -f GlobalProtect'

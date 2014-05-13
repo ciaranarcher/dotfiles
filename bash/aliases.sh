@@ -35,9 +35,11 @@ alias bert="bundle exec rake test"
 alias vf="g classic && ./script/feature list | grep voice" # List all voice features
 alias tf="tail -f log/development.log"
 
+# Boxen
 alias bounce="touch tmp/restart.txt && echo 'Server will bounce at next request.'"
 alias run_radar="g radar && npm rebuild && npm start"
 alias run_voice="g voice && bundle exec foreman start -f Procfile.boxen"
+alias update_all="g boxen && script/update-all ~/Code/zendesk"
 
 # Global Protect VPN
 alias global-off='sudo mv /Applications/GlobalProtect.app /Applications/GlobalProtectOFF.app && pkill -9 -f GlobalProtect'

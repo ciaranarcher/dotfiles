@@ -131,3 +131,15 @@ function rm_branches() {
   rm_my_branches
 }
 
+# https://gist.github.com/jimbojsb/1630790
+# light <syntax> <filename>
+# Enter the syntax on the command line and either copy from the clipboard (light js)
+# or pass a filename too (light js func.js). Then just paste into Keynote or whatever.
+function light() {
+  if [ -z "$2" ]
+    then src="pbpaste"
+  else
+    src="cat $2"
+  fi
+  $src | highlight -O rtf --syntax $1 --font Inconsolata --style solarized-dark --font-size 12 | pbcopy
+}

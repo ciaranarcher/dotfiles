@@ -45,3 +45,5 @@ alias update_all="g boxen && script/update-all ~/Code/zendesk"
 alias global-off='sudo mv /Applications/GlobalProtect.app /Applications/GlobalProtectOFF.app && pkill -9 -f GlobalProtect'
 alias global-on='sudo mv /Applications/GlobalProtectOFF.app /Applications/GlobalProtect.app'
 
+# Sonic
+alias zd=$HOME/Code/zendesk/sonic/bin/zd

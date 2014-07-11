@@ -46,4 +46,4 @@ alias global-off='sudo mv /Applications/GlobalProtect.app /Applications/GlobalPr
 alias global-on='sudo mv /Applications/GlobalProtectOFF.app /Applications/GlobalProtect.app'
 
 # Sonic
-alias zd=$HOME/Code/zendesk/sonic/bin/zd
+alias zd=$HOME/Code/zendesk/zendesk_sonic/bin/zd

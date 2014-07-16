@@ -1,5 +1,5 @@
 # Management
-alias dots="cd ~/dotfiles && vim"
+alias dots="cd ~/dotfiles && subl ."
 alias reload='source ~/.bash_profile && echo "sourced ~/.bash_profile"'
 
 # OS X: open pwd in Finder.

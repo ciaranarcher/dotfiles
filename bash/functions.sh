@@ -143,3 +143,8 @@ function light() {
   fi
   $src | highlight -O rtf --syntax $1 --font Inconsolata --style solarized-dark --font-size 12 | pbcopy
 }
+
+# Prints the 10 most recently authored git branches.
+function rb() {
+   git for-each-ref --sort='-authordate' --format='%(refname)' refs/heads | sed -e 's-refs/heads/--' | head -n 10
+}

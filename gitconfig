@@ -57,3 +57,5 @@ protocol = https
 helper = /opt/boxen/bin/boxen-git-credential
 [web]
 	browser = google.chrome
+[init]
+	templatedir = ~/.git_template

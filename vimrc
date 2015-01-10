@@ -15,13 +15,15 @@ Plugin 'gmarik/Vundle.vim'
 set backspace=indent,eol,start
 
 syntax enable
-if has('gui_running')
-	set background=light
-else
-	set background=dark
-endif
-colorscheme solarized
-
+" if has('gui_running')
+" 	set background=light
+" else
+" 	set background=dark
+" endif
+" colorscheme solarized
+:set t_Co=256 " 256 colors
+:set background=dark
+:color ir_black
 
 " Show line numbers
 set number
@@ -35,6 +37,8 @@ set hidden
 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
+nnoremap <leader>. :CtrlPTag<cr>
+
 Plugin 'bling/vim-airline'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -62,6 +66,9 @@ Plugin 'tyru/open-browser-github.vim'
 
 Plugin 'tpope/vim-commentary'
 Plugin 'rking/ag.vim'
+
+Plugin 'scrooloose/nerdtree'
+map <C-n> :NERDTreeToggle<CR>
 
 Plugin 'fatih/vim-go'
 
@@ -112,6 +119,9 @@ set hlsearch
 "
 " " clear search matching
 noremap <leader><space> :noh<cr>:call clearmatches()<cr>
+
+noremap <leader><C-w>a :bn<cr>
+noremap <leader><C-w>s :bp<cr>
 
 " bind K to grep word under cursor
 nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>

@@ -2,6 +2,9 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 let mapleader = ","
 
+set relativenumber
+set number
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -66,6 +69,7 @@ Plugin 'tyru/open-browser-github.vim'
 
 Plugin 'tpope/vim-commentary'
 Plugin 'rking/ag.vim'
+Plugin 'Raimondi/delimitMate'
 
 Plugin 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
@@ -120,8 +124,8 @@ set hlsearch
 " " clear search matching
 noremap <leader><space> :noh<cr>:call clearmatches()<cr>
 
-noremap <leader><C-w>a :bn<cr>
-noremap <leader><C-w>s :bp<cr>
+" Remap ,b to :bp
+noremap <leader>b :bn<cr>
 
 " bind K to grep word under cursor
 nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>

@@ -1,9 +1,16 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Required by nelstrom/vim-textobj-rubyblock
+set nocompatible
+filetype off
+if has("autocmd")
+  filetype indent plugin on
+endif
+
 let mapleader = ","
 
 set relativenumber
 set number
+
+runtime macros/matchit.vim
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -77,6 +84,8 @@ map <C-n> :NERDTreeToggle<CR>
 Plugin 'fatih/vim-go'
 
 Plugin 'tpope/vim-surround'
+Plugin 'kana/vim-textobj-user'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

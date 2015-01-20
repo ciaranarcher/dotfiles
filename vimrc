@@ -85,7 +85,7 @@ Plugin 'fatih/vim-go'
 
 Plugin 'tpope/vim-surround'
 Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'tek/vim-textobj-ruby'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

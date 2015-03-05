@@ -82,10 +82,17 @@ Plugin 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
 
 Plugin 'fatih/vim-go'
+autocmd FileType go setlocal ts=4 # Make tabs 4 spaces
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 Plugin 'tpope/vim-surround'
 Plugin 'kana/vim-textobj-user'
 Plugin 'tek/vim-textobj-ruby'
+Plugin 'wesQ3/vim-windowswap'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -147,14 +154,14 @@ nnoremap \ :Ag<SPACE>
 
 " run spring tests
 function! s:runTests()
-    exec ":!mspec ".@%
+    exec ":!mtest ".@%
 endfunction
 command! RunTests :call s:runTests()
 nmap <leader>t :RunTests<cr>
 
 function! s:runNearestTest()
     let spec_line_number = line('.')
-    exec ":!mspec " . @% . " -l " . spec_line_number
+    exec ":!mtest " . @% . " -l " . spec_line_number
 endfunction
 command! RunNearestTest :call s:runNearestTest()
 nmap <leader>n :RunNearestTest<cr>

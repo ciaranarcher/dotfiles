@@ -80,7 +80,7 @@ Plugin 'tyru/open-browser-github.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'rking/ag.vim'
 Plugin 'Raimondi/delimitMate'
-Plugin 'vndew/supertab'
+Plugin 'ervandew/supertab'
 
 Plugin 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
@@ -95,9 +95,21 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 Plugin 'tpope/vim-surround'
+
+" Extend text objects
 Plugin 'kana/vim-textobj-user'
 Plugin 'tek/vim-textobj-ruby'
+
+" <leader>ww to swap windows
 Plugin 'wesQ3/vim-windowswap'
+
+Plugin 'junegunn/vim-easy-align'
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. eaip)
+nmap ea <Plug>(EasyAlign)
+
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -166,7 +178,13 @@ nmap <leader>t :RunTests<cr>
 
 function! s:runNearestTest()
     let spec_line_number = line('.')
-    exec ":!mtest " . @% . " -l " . spec_line_number
+    exec ":!mtest ".@%." -l ".spec_line_number
 endfunction
 command! RunNearestTest :call s:runNearestTest()
 nmap <leader>n :RunNearestTest<cr>
+
+function! s:runRuby()
+    exec ":!ruby ".@%
+endfunction
+command! RunRuby :call s:runRuby()
+nmap <leader>r :RunRuby<cr>

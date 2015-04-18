@@ -43,6 +43,11 @@ function cbr() {
   echo "Copied '$br' to clipboard."
  }
 
+# Python pretty print
+function json() {
+   python -mjson.tool
+}
+
 # Convenience function for use when you encounter Gemfile conflicts when
 # rebasing your branch against master in Classic.
 #

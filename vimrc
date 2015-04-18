@@ -7,7 +7,8 @@ endif
 
 let mapleader = ","
 
-set relativenumber
+set noswapfile
+" set relativenumber
 set number
 
 runtime macros/matchit.vim
@@ -31,6 +32,8 @@ syntax enable
 " 	set background=dark
 " endif
 " colorscheme solarized
+
+" IR BACK
 :set t_Co=256 " 256 colors
 :set background=dark
 :color ir_black
@@ -77,12 +80,14 @@ Plugin 'tyru/open-browser-github.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'rking/ag.vim'
 Plugin 'Raimondi/delimitMate'
+Plugin 'vndew/supertab'
 
 Plugin 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
 
 Plugin 'fatih/vim-go'
-autocmd FileType go setlocal ts=4 # Make tabs 4 spaces
+autocmd FileType go setlocal ts=4
+let g:go_fmt_command = 'goimports'
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1

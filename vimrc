@@ -110,6 +110,7 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap ea <Plug>(EasyAlign)
 
 Plugin 'Valloric/YouCompleteMe'
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -169,22 +170,4 @@ command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 " bind \ to prepopulate Ag
 nnoremap \ :Ag<SPACE>
 
-" run spring tests
-function! s:runTests()
-    exec ":!mtest ".@%
-endfunction
-command! RunTests :call s:runTests()
-nmap <leader>t :RunTests<cr>
-
-function! s:runNearestTest()
-    let spec_line_number = line('.')
-    exec ":!mtest ".@%." -l ".spec_line_number
-endfunction
-command! RunNearestTest :call s:runNearestTest()
-nmap <leader>n :RunNearestTest<cr>
-
-function! s:runRuby()
-    exec ":!ruby ".@%
-endfunction
-command! RunRuby :call s:runRuby()
-nmap <leader>r :RunRuby<cr>
+source ~/.vim/functions/test_runner.vim

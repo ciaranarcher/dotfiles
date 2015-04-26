@@ -26,17 +26,6 @@ Plugin 'gmarik/Vundle.vim'
 set backspace=indent,eol,start
 
 syntax enable
-" if has('gui_running')
-" 	set background=light
-" else
-" 	set background=dark
-" endif
-" colorscheme solarized
-
-" IR BACK
-:set t_Co=256 " 256 colors
-:set background=dark
-:color ir_black
 
 " Show line numbers
 set number
@@ -111,6 +100,15 @@ nmap ea <Plug>(EasyAlign)
 
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_collect_identifiers_from_tags_files = 1
+
+" **** COLOURS ****
+:set t_Co=256 " 256 colors
+colorscheme lucius
+LuciusLight
+
+" IR BLACK
+" :set background=dark
+" :color ir_black
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

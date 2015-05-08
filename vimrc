@@ -40,6 +40,14 @@ set hidden
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/ctrlp.vim'
 nnoremap <leader>. :CtrlPTag<cr>
+" set your own custom ignore settings
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|vendor$\|log$',
+    \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+
+" Autocomplete open command
+set wildmenu
+set wildmode=list:longest
 
 Plugin 'bling/vim-airline'
 let g:airline_left_sep = ''

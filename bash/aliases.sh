@@ -6,6 +6,8 @@ alias reload='source ~/.bash_profile && echo "sourced ~/.bash_profile"'
 alias o="open ."
 # Open another instance of an application, e.g. ITerm
 alias openanother="open -n -a"
+# vim
+alias v="vim"
 
 alias hosts='sudo vim /etc/hosts'
 

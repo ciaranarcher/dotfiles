@@ -46,8 +46,8 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 
 " Autocomplete open command
-set wildmenu
-set wildmode=list:longest
+"set wildmenu
+"set wildmode=list:longest
 
 Plugin 'bling/vim-airline'
 let g:airline_left_sep = ''
@@ -106,8 +106,11 @@ vmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. eaip)
 nmap ea <Plug>(EasyAlign)
 
-Plugin 'Valloric/YouCompleteMe'
-let g:ycm_collect_identifiers_from_tags_files = 1
+" Plugin 'Valloric/YouCompleteMe'
+" let g:ycm_collect_identifiers_from_tags_files = 1
+
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " **** COLOURS ****
 :set t_Co=256 " 256 colors

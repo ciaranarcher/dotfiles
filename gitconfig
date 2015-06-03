@@ -21,6 +21,8 @@
   # Show files ignored by git:
   ign = ls-files -o -i --exclude-standa
   undo-commit = reset --soft HEAD^
+  # branch checkout
+  new = !sh -c 'git checkout -b ciaran/$0'
 [branch]
   autosetuprebase = always
 [push]

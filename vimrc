@@ -52,7 +52,8 @@ let g:ctrlp_custom_ignore = {
 Plugin 'bling/vim-airline'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline_branch_prefix = ''
+" let g:airline_branch_prefix = ''
+" let g:airline_symbols = ''
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 

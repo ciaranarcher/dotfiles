@@ -3,21 +3,16 @@
 ## Install Steps
 
 * Clone this repository into `~/dotfiles`.
-* Clone `https://github.com/magicmonty/bash-git-prompt` into  `~/.bash-git-prompt`
+* Install https://github.com/robbyrussell/oh-my-zsh
 
-Edit your `.bashrc` and add the following lines:
+Symlink:
 ```
-source ~/dotfiles/bash/path.sh
-source ~/dotfiles/bash/env.sh
-source ~/dotfiles/bash/completion.sh
-source ~/dotfiles/bash/aliases.sh
-source ~/dotfiles/bash/functions.sh
-source ~/dotfiles/bash/bash-git-prompt.sh
-```
-
-Symlink your `.gitconfig` (backup if required)
-```
+ln -s dotfiles/zshrc .zshrc
 ln -s dotfiles/gitconfig .gitconfig
+ln -s dotfiles/gitignore .gitignore
+ln -s dotfiles/agignore .agignore
+ln -s dotfiles/vim .vim
+ln -s dotfiles/vimrc .vimrc
 ```
 
 Reload:

@@ -86,9 +86,9 @@ source $ZSH/oh-my-zsh.sh
 # Boxen
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
-export ZENDESK_ROOT=/Users/ciaran/code/zendesk
+export ZENDESK_ROOT=/Users/carcher/code/zendesk
 export ZENDESK_PORT=''
-export GOPATH=/Users/ciaran/Code/go
+export GOPATH=/Users/carcher/Code/go
 
 # vi mode edit
 set -o vi
@@ -99,3 +99,4 @@ export EDITOR='vim'
 # Incremental search
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+PATH=bin:/opt/boxen/rbenv/shims:/opt/boxen/rbenv/bin:/opt/boxen/rbenv/plugins/ruby-build/bin:node_modules/.bin:/opt/boxen/nodenv/shims:/opt/boxen/nodenv/bin:/opt/boxen/homebrew/bin:/opt/boxen/homebrew/sbin:/opt/boxen/bin:/opt/boxen/rbenv/shims:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:/usr/local/bin:/Users/carcher/.bin:bin:/opt/boxen/rbenv/shims:/opt/boxen/rbenv/bin:/opt/boxen/rbenv/plugins/ruby-build/bin:node_modules/.bin:/opt/boxen/nodenv/shims:/opt/boxen/nodenv/bin:/opt/boxen/homebrew/bin:/opt/boxen/homebrew/sbin:/opt/boxen/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/carcher/Code/go/bin

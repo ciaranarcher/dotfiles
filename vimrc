@@ -27,6 +27,9 @@ set backspace=indent,eol,start
 
 syntax enable
 
+" zsh shell
+set shell=zsh
+
 " Show line numbers
 set number
 

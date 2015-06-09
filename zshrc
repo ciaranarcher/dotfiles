@@ -95,3 +95,7 @@ set -o vi
 
 # Editor
 export EDITOR='vim'
+
+# Incremental search
+bindkey -v
+bindkey '^R' history-incremental-search-backward

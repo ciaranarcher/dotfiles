@@ -30,6 +30,12 @@ syntax enable
 " zsh shell
 set shell=zsh
 
+" Some performance optimisations for slow scrolling
+set ttyfast
+set lazyredraw
+" http://superuser.com/questions/161178/why-does-vim-delay-for-a-second-whenever-i-use-the-o-command-open-a-new-line
+set ttimeoutlen=0
+
 " Show line numbers
 set number
 

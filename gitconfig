@@ -23,6 +23,8 @@
   undo-commit = reset --soft HEAD^
   # branch checkout
   new = !sh -c 'git checkout -b ciaran/$0'
+  scrub = reset --hard HEAD
+  rinse = clean -fd
 [branch]
   autosetuprebase = always
 [push]

@@ -35,6 +35,7 @@ alias be="bundle exec"
 alias bert="bundle exec rake test"
 alias vf="gclassic && ./script/feature list | grep voice" # List all voice features
 alias tf="tail -f log/development.log"
+alias scrub="git reset --hard HEAD && git clean -fd"
 
 alias gclassic="cd ~/Code/zendesk/zendesk"
 alias gvoice="cd ~/Code/zendesk/voice"
@@ -47,4 +48,5 @@ alias run_radar="gradar && npm rebuild && npm start"
 alias run_voice="gvoice && bundle exec foreman start -f Procfile.boxen"
 alias update_all="gboxen && script/update-all ~/Code/zendesk"
 alias bonk="bi && bounce"
+
 

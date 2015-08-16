@@ -1,6 +1,8 @@
 [user]
   name = Ciarán Archer
   email = carcher@zendesk.com
+[init]
+  templatedir = ~/.git_template
 [alias]
   ff = merge --ff-only
   st = status
@@ -61,5 +63,3 @@ protocol = https
 helper = /opt/boxen/bin/boxen-git-credential
 [web]
 	browser = google.chrome
-[init]
-	templatedir = ~/.git_template

@@ -8,7 +8,7 @@ endif
 let mapleader = ","
 
 set noswapfile
-" set relativenumber
+set relativenumber
 set number
 
 runtime macros/matchit.vim

@@ -51,7 +51,7 @@ Plugin 'kien/ctrlp.vim'
 nnoremap <leader>. :CtrlPTag<cr>
 " set your own custom ignore settings
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|vendor$\|log$',
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|vendor$\|log$\|public$\|tmp$',
     \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 
 " Autocomplete open command
@@ -79,6 +79,9 @@ Plugin 'tpope/vim-rails'
 autocmd FileType ruby,eruby,yaml set tw=80 ai sw=2 sts=2 et expandtab
 autocmd FileType ruby,eruby,yaml setlocal foldmethod=manual ts=2 sts=2 sw=2
 autocmd User Rails set tw=80 ai sw=2 sts=2 et expandtab
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype css setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
 
 " Open github files in browser
 Plugin 'tyru/open-browser.vim'
@@ -106,9 +109,6 @@ Plugin 'tpope/vim-surround'
 " Extend text objects
 Plugin 'kana/vim-textobj-user'
 Plugin 'tek/vim-textobj-ruby'
-
-" <leader>ww to swap windows
-Plugin 'wesQ3/vim-windowswap'
 
 Plugin 'junegunn/vim-easy-align'
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
@@ -179,6 +179,8 @@ noremap <leader><space> :noh<cr>:call clearmatches()<cr>
 
 " Remap ,b to :bp
 noremap <leader>b :bn<cr>
+" Copy file path register to clipboard register
+noremap <leader>f :let @+=@%<cr>
 
 " bind K to grep word under cursor
 nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
@@ -188,5 +190,7 @@ command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 
 " bind \ to prepopulate Ag
 nnoremap \ :Ag<SPACE>
+"  Close current buffer but keep split open
+nnoremap <leader>d :bp\|bd #<CR>
 
 source ~/.vim/functions/test_runner.vim

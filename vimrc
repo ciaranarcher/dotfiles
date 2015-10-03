@@ -94,6 +94,8 @@ Plugin 'ervandew/supertab'
 
 Plugin 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
+" Open current buffer in nerd tree
+map <leader>t :NERDTreeFind<CR>
 
 Plugin 'fatih/vim-go'
 autocmd FileType go setlocal ts=4
@@ -122,14 +124,17 @@ nmap ea <Plug>(EasyAlign)
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
+Plugin 'majutsushi/tagbar'
+map <C-t> :TagbarToggle<CR>
+
 " **** COLOURS ****
-:set t_Co=256 " 256 colors
-colorscheme lucius
-LuciusLight
+" :set t_Co=256 " 256 colors
+" colorscheme lucius
+" LuciusLight
 
 " IR BLACK
-" :set background=dark
-" :color ir_black
+:set background=dark
+:color ir_black
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -193,4 +198,4 @@ nnoremap \ :Ag<SPACE>
 "  Close current buffer but keep split open
 nnoremap <leader>d :bp\|bd #<CR>
 
-source ~/.vim/functions/test_runner.vim
+" source ~/.vim/functions/test_runner.vim

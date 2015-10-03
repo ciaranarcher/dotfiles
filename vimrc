@@ -134,7 +134,8 @@ map <C-t> :TagbarToggle<CR>
 
 " IR BLACK
 :set background=dark
-:color ir_black
+" :color ir_black
+:color grb256
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

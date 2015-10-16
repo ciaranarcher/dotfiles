@@ -10,6 +10,13 @@ let mapleader = ","
 set noswapfile
 set relativenumber
 set number
+set cursorline " highlight current line
+
+set foldenable " enable code folding
+set foldlevelstart=10 " open most folds by default
+set foldnestmax=10 " 10 nested folds max
+noremap <space> za
+set foldmethod=indent " fold based on indent level
 
 runtime macros/matchit.vim
 
@@ -77,7 +84,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 
 autocmd FileType ruby,eruby,yaml set tw=80 ai sw=2 sts=2 et expandtab
-autocmd FileType ruby,eruby,yaml setlocal foldmethod=manual ts=2 sts=2 sw=2
+autocmd FileType ruby,eruby,yaml setlocal ts=2 sts=2 sw=2
 autocmd User Rails set tw=80 ai sw=2 sts=2 et expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype css setlocal ts=2 sts=2 sw=2 expandtab

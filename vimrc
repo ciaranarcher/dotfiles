@@ -18,6 +18,9 @@ set foldnestmax=10 " 10 nested folds max
 noremap <space> za
 set foldmethod=indent " fold based on indent level
 
+" save session
+nnoremap <leader>s :mksession<CR>
+
 runtime macros/matchit.vim
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -205,5 +208,13 @@ command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
 "  Close current buffer but keep split open
 nnoremap <leader>d :bp\|bd #<CR>
+
+" move to beginning / end of a line
+nnoremap B ^
+nnoremap E $
+
+" $/^ doesn't do anything
+nnoremap $ <nop>
+nnoremap ^ <nop>
 
 " source ~/.vim/functions/test_runner.vim

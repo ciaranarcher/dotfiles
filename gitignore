@@ -1,3 +1,7 @@
 scratch
+scratch.rb
 *.sublime*
 Session.vim
+.byebug_history
+npm-debug.log
+vendor/bundle

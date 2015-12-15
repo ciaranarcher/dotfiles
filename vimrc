@@ -56,7 +56,7 @@ set hidden
 " " Keep Plugin commands between vundle#begin/end.
 " " plugin on GitHub repo
 
-Plugin 'airblade/vim-gitgutter'
+" Plugin 'airblade/vim-gitgutter' " Disabled because was slow
 Plugin 'kien/ctrlp.vim'
 nnoremap <leader>. :CtrlPTag<cr>
 " set your own custom ignore settings

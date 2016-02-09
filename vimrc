@@ -61,7 +61,7 @@ Plugin 'kien/ctrlp.vim'
 nnoremap <leader>. :CtrlPTag<cr>
 " set your own custom ignore settings
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|vendor$\|log$\|public$\|tmp$',
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|Godeps$\|vendor$\|log$\|public$\|tmp$',
     \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 
 " Autocomplete open command
@@ -81,7 +81,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
-let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['html', 'css', 'slim'] }
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['html', 'css', 'slim', 'go'] }
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
@@ -92,10 +93,15 @@ autocmd User Rails set tw=80 ai sw=2 sts=2 et expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype go setlocal noet ts=4 sw=4 sts=4
+
 
 " Open github files in browser
 Plugin 'tyru/open-browser.vim'
 Plugin 'tyru/open-browser-github.vim'
+let g:openbrowser_github_url_exists_check = 'ignore'
+nmap gh :OpenGithubFile<CR>
+vmap gh :OpenGithubFile<CR>
 
 Plugin 'tpope/vim-commentary'
 Plugin 'rking/ag.vim'

@@ -89,6 +89,7 @@ source $ZSH/oh-my-zsh.sh
 export ZENDESK_ROOT=/Users/carcher/code/zendesk
 export ZENDESK_PORT=''
 export GOPATH=/Users/carcher/Code/go
+export NGROK_REGION="eu"
 
 # vi mode edit
 set -o vi

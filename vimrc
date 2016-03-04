@@ -137,11 +137,11 @@ nmap ea <Plug>(EasyAlign)
 " Plugin 'Valloric/YouCompleteMe'
 " let g:ycm_collect_identifiers_from_tags_files = 1
 
+" Faster ctags (http://stackoverflow.com/questions/155449/vim-auto-generate-ctags)
+au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
+
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-
-Plugin 'majutsushi/tagbar'
-map <C-t> :TagbarToggle<CR>
 
 " **** COLOURS ****
 " :set t_Co=256 " 256 colors

@@ -42,11 +42,3 @@ alias gvoice="cd ~/Code/zendesk/voice"
 alias glotus="cd ~/Code/zendesk/zendesk_console"
 alias gmaestro="cd ~/Code/go/src/github.com/zendesk/maestro"
 
-# Boxen
-alias bounce="touch tmp/restart.txt && echo 'Server will bounce at next request.'"
-alias run_radar="gradar && npm rebuild && npm start"
-alias run_voice="gvoice && bundle exec foreman start -f Procfile.boxen"
-alias update_all="gboxen && script/update-all ~/Code/zendesk"
-alias bonk="bi && bounce"
-
-

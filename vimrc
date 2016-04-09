@@ -68,21 +68,25 @@ let g:ctrlp_custom_ignore = {
 "set wildmenu
 "set wildmode=list:longest
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 " let g:airline_branch_prefix = ''
 " let g:airline_symbols = ''
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='papercolor'
 set laststatus=2
 
 Plugin 'tpope/vim-fugitive'
 
-Plugin 'scrooloose/syntastic'
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['html', 'css', 'slim', 'go'] }
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+" Plugin 'scrooloose/syntastic'
+" let g:syntastic_enable_signs=1
+" let g:syntastic_auto_loc_list=1
+" let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['html', 'css', 'slim', 'go', 'js'] }
+" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+
+au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
@@ -95,6 +99,8 @@ autocmd Filetype css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype go setlocal noet ts=4 sw=4 sts=4
 
+Plugin 'mustache/vim-mustache-handlebars'
+au BufReadPost *.hbs.erb set syntax=mustache
 
 " Open github files in browser
 Plugin 'tyru/open-browser.vim'
@@ -102,6 +108,8 @@ Plugin 'tyru/open-browser-github.vim'
 let g:openbrowser_github_url_exists_check = 'ignore'
 nmap gh :OpenGithubFile<CR>
 vmap gh :OpenGithubFile<CR>
+
+
 
 Plugin 'tpope/vim-commentary'
 Plugin 'rking/ag.vim'
@@ -144,14 +152,13 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
 " **** COLOURS ****
-" :set t_Co=256 " 256 colors
-" colorscheme lucius
-" LuciusLight
+:set t_Co=256 " 256 colors
+:set background=light
+colorscheme grb-light
 
 " IR BLACK
-:set background=dark
-" :color ir_black
-:color grb256
+" :set background=dark
+" :color grb256
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

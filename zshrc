@@ -49,7 +49,11 @@ plugins=(git vi-mode jsontools)
 
 # User configuration
 
-export PATH="/usr/local/mysql/bin:/var/lib/gems/1.8/bin:/usr/local/bin:/Users/carcher/.bin:bin:node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+# export PATH=":/usr/local/mysql/bin:/var/lib/gems/1.8/bin:/usr/local/bin:/Users/carcher/.bin:bin:node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+
+# path+=('/Users/carcher/.rbenv/bin')
+# export PATH
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -97,10 +101,18 @@ export EDITOR='vim'
 # Incremental search
 bindkey -v
 bindkey '^R' history-incremental-search-backward
-PATH=bin:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:/usr/local/bin:/Users/carcher/.bin:bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/carcher/Code/go/bin
+PATH=/Users/carcher/.rbenv/bin:bin:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:/usr/local/bin:/Users/carcher/.bin:bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/carcher/Code/go/bin
+export PATH
 
 source ~/.zshrc.sensitive
 
 
 export NVM_DIR="/Users/carcher/.nvm"
 source $(brew --prefix nvm)/nvm.sh
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# ADDED BY DOCKER-IMAGES
+source /Users/carcher/Code/zendesk/docker-images/dockmaster/zdi.sh
+# [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn

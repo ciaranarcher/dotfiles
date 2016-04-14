@@ -102,6 +102,9 @@ autocmd Filetype go setlocal noet ts=4 sw=4 sts=4
 Plugin 'mustache/vim-mustache-handlebars'
 au BufReadPost *.hbs.erb set syntax=mustache
 
+Plugin 'lambdatoast/elm.vim'
+au BufReadPost *.elm set syntax=elm
+
 " Open github files in browser
 Plugin 'tyru/open-browser.vim'
 Plugin 'tyru/open-browser-github.vim'

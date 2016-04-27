@@ -6,3 +6,4 @@ Session.vim
 npm-debug.log
 vendor/bundle
 .DS_Store
+log

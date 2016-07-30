@@ -90,6 +90,7 @@ source $ZSH/oh-my-zsh.sh
 export ZENDESK_ROOT=/Users/carcher/code/zendesk
 export ZENDESK_PORT=''
 export GOPATH=/Users/carcher/Code/go
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home
 export NGROK_REGION="eu"
 
 # vi mode edit
@@ -116,3 +117,9 @@ eval "$(rbenv init -)"
 # ADDED BY DOCKER-IMAGES
 source /Users/carcher/Code/zendesk/docker-images/dockmaster/zdi.sh
 # [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/carcher/Downloads/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/carcher/Downloads/google-cloud-sdk/completion.zsh.inc'

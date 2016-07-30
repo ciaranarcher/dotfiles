@@ -80,11 +80,17 @@ set laststatus=2
 
 Plugin 'tpope/vim-fugitive'
 
-Plugin 'scrooloose/syntastic'
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['html', 'css', 'slim', 'go', 'js'] }
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+" Plugin 'scrooloose/syntastic'
+" let g:syntastic_enable_signs=1
+" let g:syntastic_auto_loc_list=1
+" let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['html', 'css', 'slim', 'go', 'js'] }
+" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+" let g:syntastic_ruby_checkers = ['mri']
+
+Plugin 'neomake/neomake'
+autocmd! BufWritePost * Neomake
+let g:neomake_open_list = 2
+
 
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 

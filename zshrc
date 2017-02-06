@@ -108,9 +108,6 @@ export PATH
 source ~/.zshrc.sensitive
 
 
-export NVM_DIR="/Users/carcher/.nvm"
-source $(brew --prefix nvm)/nvm.sh
-
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
@@ -119,7 +116,10 @@ source /Users/carcher/Code/zendesk/docker-images/dockmaster/zdi.sh
 # [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
 # The next line updates PATH for the Google Cloud SDK.
-source '/Users/carcher/Downloads/google-cloud-sdk/path.zsh.inc'
+source '/Users/carcher/Code/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
-source '/Users/carcher/Downloads/google-cloud-sdk/completion.zsh.inc'
+source '/Users/carcher/Code/google-cloud-sdk/completion.zsh.inc'
+
+# added by travis gem
+[ -f /Users/carcher/.travis/travis.sh ] && source /Users/carcher/.travis/travis.sh

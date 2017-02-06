@@ -15,6 +15,7 @@ set cursorline " highlight current line
 set foldenable " enable code folding
 set foldlevelstart=10 " open most folds by default
 set foldnestmax=10 " 10 nested folds max
+set updatetime=500
 noremap <space> za
 set foldmethod=indent " fold based on indent level
 
@@ -91,6 +92,13 @@ Plugin 'neomake/neomake'
 autocmd! BufWritePost * Neomake
 let g:neomake_open_list = 2
 
+" Scala
+Plugin 'ensime/ensime-vim'
+Plugin 'derekwyatt/vim-scala'
+autocmd BufWritePost *.scala silent :EnTypeCheck
+nnoremap <localleader>t :EnTypeCheck<CR>
+au BufReadPost *.scala set syntax=scala
+
 
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 
@@ -101,6 +109,7 @@ autocmd FileType ruby,eruby,yaml set tw=80 ai sw=2 sts=2 et expandtab
 autocmd FileType ruby,eruby,yaml setlocal ts=2 sts=2 sw=2
 autocmd User Rails set tw=80 ai sw=2 sts=2 et expandtab
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype json setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype go setlocal noet ts=4 sw=4 sts=4

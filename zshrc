@@ -45,7 +45,7 @@ ZSH_CUSTOM=~/dotfiles/zsh_custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode jsontools)
+plugins=(git vi-mode jsontools zsh-autosuggestions)
 
 # User configuration
 
@@ -103,7 +103,7 @@ export EDITOR='vim'
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 PATH=/Users/carcher/.rbenv/bin:bin:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:/usr/local/bin:/Users/carcher/.bin:bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/carcher/Code/go/bin
-export PATH
+export PATH="/usr/local/opt/go@1.6/bin:$PATH" # required to use go1.6 (https://gist.github.com/ciaranarcher/d3ba5150c6b48ebdfcae5cd9123557fd)
 
 source ~/.zshrc.sensitive
 

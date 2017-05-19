@@ -92,14 +92,6 @@ Plugin 'neomake/neomake'
 autocmd! BufWritePost * Neomake
 let g:neomake_open_list = 2
 
-" Scala
-Plugin 'ensime/ensime-vim'
-Plugin 'derekwyatt/vim-scala'
-autocmd BufWritePost *.scala silent :EnTypeCheck
-nnoremap <localleader>t :EnTypeCheck<CR>
-au BufReadPost *.scala set syntax=scala
-
-
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 
 Plugin 'vim-ruby/vim-ruby'
@@ -169,6 +161,11 @@ au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+
+" Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'mzlogin/vim-markdown-toc'
 
 " **** COLOURS ****
 :set t_Co=256 " 256 colors

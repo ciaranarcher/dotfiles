@@ -68,3 +68,8 @@ router/bin/legion_router.jar
 api/bin/legion.jar
 account.test.cache
 cache/account.service.cache
+
+ # vs code
+ .vscode/*/**
+ debug.test
+ debug

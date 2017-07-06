@@ -132,7 +132,7 @@ map <C-n> :NERDTreeToggle<CR>
 map <leader>t :NERDTreeFind<CR>
 
 Plugin 'fatih/vim-go'
-autocmd FileType go setlocal ts=4
+autocmd FileType go setlocal ts=4 commentstring=//\ %s
 let g:go_fmt_command = 'goimports'
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1

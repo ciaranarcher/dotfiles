@@ -145,3 +145,9 @@ function light() {
 function rb() {
    git for-each-ref --sort='-authordate' --format='%(refname)' refs/heads | sed -e 's-refs/heads/--' | head -n 10
 }
+
+# Tails a bunch of outbound workers (requires obctl and multitail).
+function rtail() {
+  echo "Tailing all workers with prefix $1 ..."
+  obctl ls -p do | grep $1 | awk '{printf "-l \x27ssh -o \"StrictHostKeyChecking no\" -i ~\/.ssh\/ob.pem root@%s \"tail -f \/opt\/logs\/'$1'.log\"\x27 ", $4}' | xargs multitail -j
+}

@@ -141,6 +141,9 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_metalinter_autosave = 1
 
+" Neovim verison...
+Plugin 'nsf/gocode', {'rtp': 'nvim/'}
+
 Plugin 'tpope/vim-surround'
 
 " Extend text objects

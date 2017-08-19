@@ -94,7 +94,8 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home
 export NGROK_REGION="eu"
 
 # Used to docker images to mount $GOPATH
-export DOCKER_IMAGES_MOUNT_GOPATH="1"
+export DOCKER_IMAGES_MOUNT_GOPATH=true
+export DOCKER_VM_CPUS=2
 
 # vi mode edit
 set -o vi
@@ -106,7 +107,7 @@ export EDITOR='vim'
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 PATH=/Users/carcher/.rbenv/bin:bin:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:/usr/local/bin:/Users/carcher/.bin:bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/carcher/Code/go/bin
-export PATH="/usr/local/opt/go@1.7/bin:$PATH" # required to use go1.6 (https://gist.github.com/ciaranarcher/d3ba5150c6b48ebdfcae5cd9123557fd)
+export PATH="/usr/local/opt/go@1.6/bin:$PATH" # required to use go1.6 (https://gist.github.com/ciaranarcher/d3ba5150c6b48ebdfcae5cd9123557fd)
 
 source ~/.zshrc.sensitive
 
@@ -118,11 +119,11 @@ eval "$(rbenv init -)"
 source /Users/carcher/Code/zendesk/docker-images/dockmaster/zdi.sh
 # [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/carcher/Code/google-cloud-sdk/path.zsh.inc'
-
-# The next line enables shell command completion for gcloud.
-source '/Users/carcher/Code/google-cloud-sdk/completion.zsh.inc'
-
 # added by travis gem
 [ -f /Users/carcher/.travis/travis.sh ] && source /Users/carcher/.travis/travis.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/carcher/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/carcher/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/carcher/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/carcher/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

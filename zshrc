@@ -109,15 +109,12 @@ bindkey '^R' history-incremental-search-backward
 PATH=/Users/carcher/.rbenv/bin:bin:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:/usr/local/bin:/Users/carcher/.bin:bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/carcher/Code/go/bin
 export PATH="/usr/local/opt/go@1.6/bin:$PATH" # required to use go1.6 (https://gist.github.com/ciaranarcher/d3ba5150c6b48ebdfcae5cd9123557fd)
 
-source ~/.zshrc.sensitive
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+source ~/.zshrc.sensitive
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-
-# ADDED BY DOCKER-IMAGES
-source /Users/carcher/Code/zendesk/docker-images/dockmaster/zdi.sh
-# [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
 # added by travis gem
 [ -f /Users/carcher/.travis/travis.sh ] && source /Users/carcher/.travis/travis.sh
@@ -127,3 +124,6 @@ if [ -f '/Users/carcher/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/carcher/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/carcher/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# BEGIN DOCKER-IMAGES
+source /Users/carcher/Code/zendesk/docker-images/dockmaster/zdi.sh
+# END DOCKER-IMAGES

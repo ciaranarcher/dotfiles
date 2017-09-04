@@ -10,7 +10,7 @@ let mapleader = ","
 set noswapfile
 set relativenumber
 set number
-set cursorline " highlight current line
+":set cursorline " highlight current line
 
 set foldenable " enable code folding
 set foldlevelstart=10 " open most folds by default
@@ -109,17 +109,12 @@ autocmd Filetype go setlocal noet ts=4 sw=4 sts=4
 Plugin 'mustache/vim-mustache-handlebars'
 au BufReadPost *.hbs.erb set syntax=mustache
 
-Plugin 'lambdatoast/elm.vim'
-au BufReadPost *.elm set syntax=elm
-
 " Open github files in browser
 Plugin 'tyru/open-browser.vim'
 Plugin 'tyru/open-browser-github.vim'
 let g:openbrowser_github_url_exists_check = 'ignore'
 nmap gh :OpenGithubFile<CR>
 vmap gh :OpenGithubFile<CR>
-
-
 
 Plugin 'tpope/vim-commentary'
 Plugin 'rking/ag.vim'

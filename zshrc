@@ -127,3 +127,7 @@ if [ -f '/Users/carcher/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then s
 # BEGIN DOCKER-IMAGES
 source /Users/carcher/Code/zendesk/docker-images/dockmaster/zdi.sh
 # END DOCKER-IMAGES
+
+# Go is managed by goenv: https://github.com/syndbg/goenv
+eval "$(goenv init -)"
+

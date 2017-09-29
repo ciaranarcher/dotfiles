@@ -246,9 +246,9 @@ autocmd Filetype json setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype css setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype go setlocal noet ts=4 sw=4 sts=4
+" Default files with no filetype enabled to ruby syntax
+au BufNewFile,BufRead * if &syntax == '' | set syntax=ruby | endif
 
-Plugin 'mustache/vim-mustache-handlebars'
-au BufReadPost *.hbs.erb set syntax=mustache
 
 " Open github files in browser
 Plugin 'tyru/open-browser.vim'
@@ -292,13 +292,13 @@ vmap <Enter> <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. eaip)
 nmap ea <Plug>(EasyAlign)
 
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-
 " Markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mzlogin/vim-markdown-toc'
+
+" Project-wide search and replace
+Plugin 'dyng/ctrlsf.vim'
 
 
 " All of your Plugins must be added before the following line

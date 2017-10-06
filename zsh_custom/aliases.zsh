@@ -7,7 +7,7 @@ alias o="open ."
 # Open another instance of an application, e.g. ITerm
 alias openanother="open -n -a"
 # vim
-alias v="nvim" # Use neovim
+alias v="vim" # Use vim
 
 alias hosts='sudo vim /etc/hosts'
 

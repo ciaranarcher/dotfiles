@@ -45,6 +45,7 @@ set nobackup
 set nowb
 
 " Use relative line numbers
+set number
 set relativenumber
 
 " Height of the command bar
@@ -120,12 +121,17 @@ set wrap "Wrap lines
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 :set t_Co=256 " 256 colors
-:set background=light
-colorscheme grb-light
+
+" LIGHT
+" :set background=light
+" colorscheme grb-light
 
 " IR BLACK
-" :set background=dark
-" :color grb256
+:set background=dark
+:color grb256
+" Fix up highlighting for dark modes
+" highlight Visual cterm=reverse ctermbg=LightGray ctermfg=NONE
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -217,21 +223,20 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|Godeps$\|vendor$\|log$\|public$\|tmp$',
     \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 
+" airline for a fancy status bar
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-" let g:airline_branch_prefix = ''
-" let g:airline_symbols = ''
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='papercolor'
-set laststatus=2
+let g:airline_theme='simple'
+set noshowmode " Hides the original vim mode (INSERT / V-BLOCK etc.)
 
 Plugin 'tpope/vim-fugitive'
 
-Plugin 'neomake/neomake'
-autocmd! BufWritePost * Neomake
-let g:neomake_open_list = 2
+" Plugin 'neomake/neomake'
+" autocmd! BufWritePost * Neomake
+" let g:neomake_open_list = 2
 
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 
@@ -277,8 +282,8 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_metalinter_autosave = 1
 
-" Neovim verison...
-Plugin 'nsf/gocode', {'rtp': 'nvim/'}
+" vim verison...
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
 Plugin 'tpope/vim-surround'
 

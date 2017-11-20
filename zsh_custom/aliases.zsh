@@ -12,7 +12,7 @@ alias v="vim" # Use vim
 alias hosts='sudo vim /etc/hosts'
 
 # Shell
-alias la='ls -alh'
+alias la='ls -alht'
 alias cdd='cd -'  # back to last directory
 alias pg='ps aux | grep '
 alias top='top -ocpu'

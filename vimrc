@@ -129,9 +129,6 @@ set wrap "Wrap lines
 " IR BLACK
 :set background=dark
 :color grb256
-" Fix up highlighting for dark modes
-" highlight Visual cterm=reverse ctermbg=LightGray ctermfg=NONE
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -192,15 +189,6 @@ nnoremap \ :Ag<SPACE>
 "  Close current buffer but keep split open
 nnoremap <leader>d :bp\|bd #<CR>
 
-" move to beginning / end of a line
-nnoremap B ^
-nnoremap E $
-
-" $/^ doesn't do anything
-nnoremap $ <nop>
-nnoremap ^ <nop>
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vundle settings and plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -233,10 +221,6 @@ let g:airline_theme='simple'
 set noshowmode " Hides the original vim mode (INSERT / V-BLOCK etc.)
 
 Plugin 'tpope/vim-fugitive'
-
-" Plugin 'neomake/neomake'
-" autocmd! BufWritePost * Neomake
-" let g:neomake_open_list = 2
 
 au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 
@@ -272,18 +256,31 @@ map <C-n> :NERDTreeToggle<CR>
 " Open current buffer in nerd tree
 map <leader>t :NERDTreeFind<CR>
 
-Plugin 'fatih/vim-go'
-autocmd FileType go setlocal ts=4 commentstring=//\ %s
-let g:go_fmt_command = 'goimports'
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_metalinter_autosave = 1
+" Map j/k to navigate autocomplete rather than C-p/C-n
+inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
-" vim verison...
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'w0rp/ale' " Async lint engine...
+let g:ale_sign_column_always = 1
+
+Plugin 'fatih/vim-go'
+Plugin 'SirVer/ultisnips'
+let g:go_fmt_command = "goimports"
+let g:go_list_type = "location" " or quickfix
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_enabled = ['vet', 'golint', 'structcheck', 'maligned', 'deadcode', 'goimports', 'errcheck', 'varcheck', 'interfacer', 'unconvert', 'goconst', 'gas',]
+
+set autowrite " Save automatically when running a command"
+autocmd FileType go setlocal ts=4 commentstring=//\ %s
+" Open alternate (i.e. test)
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AH call go#alternate#Switch(<bang>0, 'split')
+noremap <leader>i :GoInfo<cr>
+noremap <leader>m :GoMetaLinter<cr>
+noremap <leader>c :GoCoverage<cr>
+nmap gt :GoTest<CR>
+vmap gt :GoTest<CR>
 
 Plugin 'tpope/vim-surround'
 

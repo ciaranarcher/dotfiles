@@ -151,3 +151,17 @@ function rtail() {
   echo "Tailing all workers with prefix $1 ..."
   obctl ls -p do | grep $1 | awk '{printf "-l \x27ssh -o \"StrictHostKeyChecking no\" -i ~\/.ssh\/ob.pem root@%s \"tail -f \/opt\/logs\/'$1'.log\"\x27 ", $4}' | xargs multitail -j
 }
+
+# Update all rubygems
+function update_all_rubygems() {
+    set -e
+
+    eval "$(rbenv init -)"
+
+    for version in `rbenv whence gem`; do
+        rbenv shell "$version"
+        echo "Updating rubygems for $version"
+        gem update --system --no-document --quiet
+        echo ""
+    done
+}

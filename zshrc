@@ -90,12 +90,14 @@ source $ZSH/oh-my-zsh.sh
 export ZENDESK_ROOT=/Users/carcher/code/zendesk
 export ZENDESK_PORT=''
 export GOPATH=/Users/carcher/Code/go
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
 export NGROK_REGION="eu"
+export ZDI_UPDATE_PARALLEL=true
 
 # Used to docker images to mount $GOPATH
 export DOCKER_IMAGES_MOUNT_GOPATH=true
 export DOCKER_VM_CPUS=2
+export DEDICATED_DOCKER_DISK=true
 
 # vi mode edit
 set -o vi
@@ -124,10 +126,10 @@ if [ -f '/Users/carcher/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/carcher/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/carcher/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-# BEGIN DOCKER-IMAGES
-source /Users/carcher/Code/zendesk/docker-images/dockmaster/zdi.sh
-# END DOCKER-IMAGES
 
 # Go is managed by goenv: https://github.com/syndbg/goenv
 eval "$(goenv init -)"
 
+# BEGIN DOCKER-IMAGES
+source /Users/carcher/Code/zendesk/docker-images/dockmaster/zdi.sh
+# END DOCKER-IMAGES

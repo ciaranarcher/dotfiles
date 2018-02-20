@@ -5,7 +5,7 @@
   templatedir = ~/.git_template
 [alias]
   ff = merge --ff-only
-  st = status
+  st = status -sb
   d = diff --color
   ci = commit -v
   aa = add --all

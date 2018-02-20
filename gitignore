@@ -10,6 +10,7 @@ vendor/bundle
 log
 *vim-go-test*
 .idea
+.editorconfig
 
 *~
 *.lock

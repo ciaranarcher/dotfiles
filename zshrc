@@ -88,7 +88,9 @@ source $ZSH/oh-my-zsh.sh
 # source ~/.local/bin/bashmarks.sh
 
 export ZENDESK_ROOT=/Users/carcher/code/zendesk
+export ZENDESK_CODE_DIR=/Users/carcher/code/zendesk
 export ZENDESK_PORT=''
+export BIMEIO=/Users/carcher/Code/zendesk/explore
 export GOPATH=/Users/carcher/Code/go
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
 export NGROK_REGION="eu"

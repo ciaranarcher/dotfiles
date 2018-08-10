@@ -74,3 +74,4 @@ cache/account.service.cache
  .vscode/*/**
  debug.test
  debug
+ .vscode/settings.json

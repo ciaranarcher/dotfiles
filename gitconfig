@@ -47,7 +47,7 @@
   changed = green
   untracked = cyan
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/carcher/.gitignore
   quotepath = false
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"

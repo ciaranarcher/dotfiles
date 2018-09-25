@@ -32,7 +32,7 @@ let mapleader = ","
 " Keep cursor centered on screen 5 chars
 set so=5
 
-" Turn on the WiLd menu
+" Turn on the Wild menu
 set wildmenu
 
 " Ignore compiled files
@@ -46,7 +46,7 @@ set nowb
 
 " Use relative line numbers
 set number
-set relativenumber
+" set relativenumber
 
 " Height of the command bar
 set cmdheight=1
@@ -115,21 +115,6 @@ set tw=100
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-:set t_Co=256 " 256 colors
-
-" LIGHT
-" :set background=light
-" colorscheme grb-light
-
-" IR BLACK
-:set background=dark
-:color grb256
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Weird stuff
@@ -262,6 +247,7 @@ inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
 Plugin 'w0rp/ale' " Async lint engine...
 let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
 
 Plugin 'fatih/vim-go'
 Plugin 'SirVer/ultisnips'
@@ -302,6 +288,20 @@ Plugin 'mzlogin/vim-markdown-toc'
 " Project-wide search and replace
 Plugin 'dyng/ctrlsf.vim'
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors and Fonts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+:set t_Co=256 " 256 colors
+
+" LIGHT
+" :set background=light
+" colorscheme grb-light
+
+" IR BLACK
+set background=dark
+color grb256
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

@@ -75,3 +75,6 @@ cache/account.service.cache
  debug.test
  debug
  .vscode/settings.json
+
+# ipython
+.ipynb_checkpoints/

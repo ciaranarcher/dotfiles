@@ -18,7 +18,8 @@
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ls = ls-files
-  pb = push -u origin
+  pushb = !sh -c 'git push -u origin `git rev-parse --abbrev-ref HEAD`'
+  pushbf = !sh -c 'git push -u --force-with-lease origin `git rev-parse --abbrev-ref HEAD`'
   cor = checkout -t
   # Show files ignored by git:
   ign = ls-files -o -i --exclude-standa

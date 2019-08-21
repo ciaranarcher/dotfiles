@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/carcher/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -87,12 +87,12 @@ source $ZSH/oh-my-zsh.sh
 # source ~/dotfiles/bash/functions.sh
 # source ~/.local/bin/bashmarks.sh
 
-export ZENDESK_ROOT=/Users/carcher/code/zendesk
-export ZENDESK_CODE_DIR=/Users/carcher/code/zendesk
+export ZENDESK_ROOT=~/Code/zendesk
+export ZENDESK_CODE_DIR=~/Code/zendesk/zendesk
 export ZENDESK_PORT=''
-export BIMEIO=/Users/carcher/Code/zendesk/explore
-export GOPATH=/Users/carcher/Code/go
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
+export BIMEIO=~/Code/zendesk/explore
+export GOPATH=~/Code/go
+export JAVA_HOME=`/usr/libexec/java_home --version 12`
 export NGROK_REGION="eu"
 export ZDI_UPDATE_PARALLEL=true
 
@@ -110,10 +110,8 @@ export EDITOR='vim'
 # Incremental search
 bindkey -v
 bindkey '^R' history-incremental-search-backward
-PATH=/Users/carcher/.rbenv/bin:bin:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:/usr/local/bin:/Users/carcher/.bin:bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/carcher/Code/go/bin:/Users/carcher/Library/Python/3.6/bin
+PATH=/usr/local/anaconda3/bin:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:/usr/local/bin:~/.bin:bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/Code/go/bin:/Users/carcher/Library/Python/3.6/bin:~/.rbenv/shims
 export PATH="/usr/local/opt/go@1.6/bin:$PATH" # required to use go1.6 (https://gist.github.com/ciaranarcher/d3ba5150c6b48ebdfcae5cd9123557fd)
-
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source ~/.zshrc.sensitive
 
@@ -121,17 +119,13 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # added by travis gem
-[ -f /Users/carcher/.travis/travis.sh ] && source /Users/carcher/.travis/travis.sh
+[ -f ~/.travis/travis.sh ] && source /Users/carcher/.travis/travis.sh
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/carcher/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/carcher/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '~/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/carcher/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/carcher/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/carcher/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '~/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/carcher/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Go is managed by goenv: https://github.com/syndbg/goenv
 eval "$(goenv init -)"
-
-# BEGIN DOCKER-IMAGES
-source /Users/carcher/Code/zendesk/docker-images/dockmaster/zdi.sh
-# END DOCKER-IMAGES

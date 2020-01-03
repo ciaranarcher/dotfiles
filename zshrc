@@ -38,6 +38,11 @@ ZSH_THEME="robbyrussell"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="dd/mm/yyyy"
 
+# History settings
+unsetopt inc_append_history
+unsetopt share_history
+
+
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=~/dotfiles/zsh_custom
 

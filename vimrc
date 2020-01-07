@@ -250,7 +250,6 @@ let g:ale_sign_column_always = 1
 let g:ale_set_highlights = 0
 
 Plugin 'fatih/vim-go'
-Plugin 'SirVer/ultisnips'
 let g:go_fmt_command = "goimports"
 let g:go_list_type = "location" " or quickfix
 let g:go_metalinter_autosave = 1

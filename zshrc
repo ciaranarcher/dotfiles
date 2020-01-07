@@ -97,7 +97,7 @@ export ZENDESK_CODE_DIR=~/Code/zendesk/zendesk
 export ZENDESK_PORT=''
 export BIMEIO=~/Code/zendesk/explore
 export GOPATH=~/Code/go
-export JAVA_HOME=`/usr/libexec/java_home --version 12`
+export JAVA_HOME=`/usr/libexec/java_home --version 13`
 export NGROK_REGION="eu"
 export ZDI_UPDATE_PARALLEL=true
 

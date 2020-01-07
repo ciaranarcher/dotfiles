@@ -93,7 +93,7 @@ source $ZSH/oh-my-zsh.sh
 # source ~/.local/bin/bashmarks.sh
 
 export ZENDESK_ROOT=~/Code/zendesk
-export ZENDESK_CODE_DIR=~/Code/zendesk/zendesk
+export ZENDESK_CODE_DIR=~/Code/zendesk
 export ZENDESK_PORT=''
 export BIMEIO=~/Code/zendesk/explore
 export GOPATH=~/Code/go

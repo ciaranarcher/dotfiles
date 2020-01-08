@@ -134,3 +134,7 @@ if [ -f '~/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users
 
 # Go is managed by goenv: https://github.com/syndbg/goenv
 eval "$(goenv init -)"
+# BEGIN ZDI
+export DOCKER_FOR_MAC_ENABLED=true
+source /Users/carcher/Code/zendesk/zdi/dockmaster/zdi.sh
+# END ZDI

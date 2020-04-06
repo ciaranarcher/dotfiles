@@ -96,7 +96,6 @@ export ZENDESK_ROOT=~/Code/zendesk
 export ZENDESK_CODE_DIR=~/Code/zendesk
 export ZENDESK_PORT=''
 export BIMEIO=~/Code/zendesk/explore
-export GOPATH=~/Code/go
 export JAVA_HOME=`/usr/libexec/java_home --version 13`
 export NGROK_REGION="eu"
 export ZDI_UPDATE_PARALLEL=true
@@ -138,3 +137,4 @@ eval "$(goenv init -)"
 export DOCKER_FOR_MAC_ENABLED=true
 source /Users/carcher/Code/zendesk/zdi/dockmaster/zdi.sh
 # END ZDI
+eval "$(goenv init -)"

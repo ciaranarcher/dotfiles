@@ -96,7 +96,6 @@ export ZENDESK_ROOT=~/Code/zendesk
 export ZENDESK_CODE_DIR=~/Code/zendesk
 export ZENDESK_PORT=''
 export BIMEIO=~/Code/zendesk/explore
-export JAVA_HOME=`/usr/libexec/java_home --version 13`
 export NGROK_REGION="eu"
 export ZDI_UPDATE_PARALLEL=true
 
@@ -133,8 +132,13 @@ if [ -f '~/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users
 
 # Go is managed by goenv: https://github.com/syndbg/goenv
 eval "$(goenv init -)"
+#
+# jenv support (manually added)
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
 # BEGIN ZDI
 export DOCKER_FOR_MAC_ENABLED=true
 source /Users/carcher/Code/zendesk/zdi/dockmaster/zdi.sh
 # END ZDI
-eval "$(goenv init -)"
+

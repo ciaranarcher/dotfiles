@@ -71,10 +71,10 @@ account.test.cache
 cache/account.service.cache
 
  # vs code
- .vscode/*/**
- debug.test
- debug
- .vscode/settings.json
+.vscode/**
+debug.test
+debug
+.vscode/settings.json
 
 # ipython
 .ipynb_checkpoints/

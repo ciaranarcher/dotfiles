@@ -142,3 +142,8 @@ export DOCKER_FOR_MAC_ENABLED=true
 source /Users/carcher/Code/zendesk/zdi/dockmaster/zdi.sh
 # END ZDI
 
+# AWS support
+autoload bashcompinit
+bashcompinit
+source /Users/carcher/Code/zendesk/dotfiles_n_scripts/shell_scripts/aws-exec.bash
+

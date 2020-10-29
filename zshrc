@@ -130,9 +130,6 @@ if [ -f '~/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/carch
 # The next line enables shell command completion for gcloud.
 if [ -f '~/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/carcher/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
-# Go is managed by goenv: https://github.com/syndbg/goenv
-eval "$(goenv init -)"
-#
 # jenv support (manually added)
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"

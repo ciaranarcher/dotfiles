@@ -59,4 +59,6 @@
 [hub]
 protocol = https
 [web]
-	browser = google.chrome
+    browser = google.chrome
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/

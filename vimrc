@@ -133,7 +133,8 @@ set lazyredraw
 set ttimeoutlen=0
 
 " Faster ctags (http://stackoverflow.com/questions/155449/vim-auto-generate-ctags)
-au BufWritePost *.c,*.cpp,*.h silent! !ctags -R &
+set tags=./tags;
+au BufWritePost *.rb,*.go silent! !ctags -R &
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mappings
@@ -283,6 +284,8 @@ nmap ea <Plug>(EasyAlign)
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mzlogin/vim-markdown-toc'
+let g:vim_markdown_json_frontmatter = 1
+
 
 " Project-wide search and replace
 Plugin 'dyng/ctrlsf.vim'

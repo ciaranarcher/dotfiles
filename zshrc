@@ -40,7 +40,7 @@ HIST_STAMPS="dd/mm/yyyy"
 
 # History settings
 unsetopt inc_append_history
-unsetopt share_history
+setopt append_history
 
 
 # Would you like to use another custom folder than $ZSH/custom?
@@ -54,9 +54,9 @@ plugins=(git vi-mode jsontools zsh-autosuggestions)
 
 # User configuration
 
-# export PATH=":/usr/local/mysql/bin:/var/lib/gems/1.8/bin:/usr/local/bin:/Users/carcher/.bin:bin:node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+# export PATH=":/usr/local/mysql/bin:/var/lib/gems/1.8/bin:/usr/local/bin:/Users/ciaran.archer/.bin:bin:node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 
-# path+=('/Users/carcher/.rbenv/bin')
+# path+=('/Users/ciaran.archer/.rbenv/bin')
 # export PATH
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -113,7 +113,7 @@ export EDITOR='vim'
 # Incremental search
 bindkey -v
 bindkey '^R' history-incremental-search-backward
-PATH=/usr/local/anaconda3/bin:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:/usr/local/bin:~/.bin:bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/Code/go/bin:/Users/carcher/Library/Python/3.6/bin:~/.rbenv/shims
+PATH=/usr/local/anaconda3/bin:/usr/local/mysql/bin:/var/lib/gems/1.8/bin:/usr/local/bin:~/.bin:bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:~/Code/go/bin:/Users/ciaran.archer/Library/Python/3.6/bin:~/.rbenv/shims
 export PATH="/usr/local/opt/go@1.6/bin:$PATH" # required to use go1.6 (https://gist.github.com/ciaranarcher/d3ba5150c6b48ebdfcae5cd9123557fd)
 
 source ~/.zshrc.sensitive
@@ -121,26 +121,25 @@ source ~/.zshrc.sensitive
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# added by travis gem
-[ -f ~/.travis/travis.sh ] && source /Users/carcher/.travis/travis.sh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '~/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/carcher/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '~/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/carcher/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
 # jenv support (manually added)
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
-# BEGIN ZDI
-export DOCKER_FOR_MAC_ENABLED=true
-source /Users/carcher/Code/zendesk/zdi/dockmaster/zdi.sh
-# END ZDI
 
 # AWS support
 autoload bashcompinit
 bashcompinit
-source /Users/carcher/Code/zendesk/dotfiles_n_scripts/shell_scripts/aws-exec.bash
+source /Users/ciaran.archer/Code/zendesk/dotfiles_n_scripts/shell_scripts/aws-exec.bash
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ciaran.archer/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ciaran.archer/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ciaran.archer/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ciaran.archer/google-cloud-sdk/completion.zsh.inc'; fi
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+# BEGIN ZDI
+export DOCKER_FOR_MAC_ENABLED=true
+source /Users/ciaran.archer/Code/zendesk/zdi/dockmaster/zdi.sh
+# END ZDI

@@ -2,7 +2,6 @@
   name = Ciaran Archer
   email = carcher@zendesk.com
 [init]
-  templatedir = ~/.git_template
 [alias]
   ff = merge --ff-only
   st = status -sb
@@ -48,7 +47,7 @@
   changed = green
   untracked = cyan
 [core]
-  excludesfile = /Users/carcher/.gitignore
+  excludesfile = /Users/ciaran.archer/.gitignore
   quotepath = false
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"

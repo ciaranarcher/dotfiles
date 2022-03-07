@@ -17,6 +17,8 @@ ln -s dotfiles/vimrc .vimrc
 ln -s dotfiles/ideavimrc .ideavimrc
 ```
 
+You'll need to install [Vundle](https://github.com/VundleVim/Vundle.vim) for the vim plugins to work.
+
 Reload:
 ```
 source .bashrc
